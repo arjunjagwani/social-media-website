@@ -305,6 +305,7 @@ body {
 }
 
 /* Each Post container */
+/* Post container */
 .Post {
   background: #ffffff;
   border: 1px solid #e5e7eb;
@@ -315,35 +316,68 @@ body {
   width: 100%;
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
   transition: background 0.2s ease;
-  text-align: left;   /* all content left aligned */
+  text-align: left;
 }
 
 .Post:hover {
-  background: #f9fafb;   /* subtle hover */
+  background: #f9fafb;
 }
 
-/* Username (small, muted, like Reddit) */
+/* Username (small + muted) */
 .Post .UserName {
   font-size: 12px;
   font-weight: 500;
-  color: #6b7280;   /* gray-500 */
+  color: #6b7280; /* gray-500 */
   margin-bottom: 6px;
 }
 
-/* Title (decent size, prominent) */
+/* Title (medium-bold, stands out) */
 .Post .Title {
   font-size: 18px;
   font-weight: 700;
-  color: #111827;   /* almost black */
+  color: #111827; /* dark gray */
   margin-bottom: 8px;
   line-height: 1.4;
 }
 
-/* Description (smaller, readable body) */
-.Post .Description p{
+/* Description (body text) */
+.Post .Description {
   font-size: 14px;
-  color: #374151;   /* gray-700 */
+  color: #374151; /* gray-700 */
   line-height: 1.6;
+  white-space: pre-wrap; /* keeps paragraph line breaks */
+  margin-bottom: 12px;
+  
+}
+.Post .Description p {
   text-align: left;
-  white-space: pre-wrap;
+}
+
+/* Actions (like section) */
+.Post .Actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Like/Dislike button */
+.Post .Actions button {
+  background: #f3f4f6; /* light gray */
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.Post .Actions button:hover {
+  background: #e5e7eb;
+  transform: scale(1.05);
+}
+
+/* Like count */
+.Post .Actions span {
+  font-size: 14px;
+  color: #4b5563; /* muted gray */
 }
