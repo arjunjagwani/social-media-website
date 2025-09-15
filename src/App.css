@@ -36,3 +36,314 @@
     transform: rotate(360deg);
   }
 }
+/* RESET + BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+body {
+  background: #f9fafb;
+  color: #061434;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* NAVBAR */
+.NavBar {
+  position: sticky;
+  top: 0;
+  background: #cd9bf4;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  z-index: 1000;
+}
+
+.NavBar a {
+  text-decoration: none;
+  color: #374151;
+  font-weight: 500;
+  margin-right: 20px;
+  transition: color 0.2s ease;
+}
+
+.NavBar a:hover {
+  color: #2563eb; /* nice blue */
+}
+
+/* USER INFO IN NAVBAR */
+.NavBar div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.NavBar span {
+  font-weight: 600;
+}
+
+.NavBar img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ebedf3;
+}
+
+.NavBar button {
+  background: #eb2525;
+  border: none;
+  padding: 6px 14px;
+  color: white;
+  font-size: 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.NavBar button:hover {
+  background: #1d4ed8;
+}
+
+/* MAIN CONTENT LAYOUT */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 24px;
+  padding: 20px;
+  flex: 1;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr; /* hide sidebar */
+  }
+}
+
+/* Homepage feed layout */
+.Homepage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centers posts horizontally */
+  justify-content: flex-start;
+  padding: 30px 15px;
+  background: #f9fafb;   /* light gray feed background */
+  min-height: 100vh;     /* full height screen */
+}
+
+/* Ensures posts don’t stretch too wide */
+.Homepage .Post {
+  width: 100%;
+  max-width: 650px;   /* same as before, consistent post size */
+}
+
+
+.Homepage p {
+  font-size: 20px;
+  text-align: center;
+  color: #374151;
+}
+
+/* RIGHT SIDEBAR */
+.sidebar-right {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  height: fit-content;
+}
+
+.sidebar-right .user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.sidebar-right img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.sidebar-right span {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.sidebar-right button {
+  margin-top: 10px;
+  background: #2563eb;
+  border: none;
+  padding: 6px 14px;
+  color: white;
+  font-size: 14px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.sidebar-right button:hover {
+  background: #1d4ed8;
+}
+
+/* LOGIN PAGE */
+.Login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px;
+  min-height: 70vh;
+}
+
+.Login p {
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.Login button {
+  background: #db4437; /* Google red */
+  border: none;
+  padding: 12px 20px;
+  color: white;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.Login button:hover {
+  background: #c23321;
+}
+
+/* Wrapper to center the form */
+.PostWrapper {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* The actual form box */
+.Post.form {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;   /* prevents being too wide */
+  min-width: 300px;   /* prevents being too narrow */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+
+.Post.form form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Inputs + Textarea */
+.Post.form input[type="text"],
+.Post.form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 15px;
+  background: #f9fafb;
+  transition: border 0.2s ease, background 0.2s ease;
+}
+
+.Post.form input[type="text"]:focus,
+.Post.form textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  background: #ffffff;
+}
+
+/* Textarea */
+.Post.form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Error messages */
+.Post.form p {
+  font-size: 13px;
+  color: #dc2626; /* red for errors */
+  margin-top: -8px;
+  margin-left: 4px;
+}
+
+/* Submit button */
+.Post.form input[type="submit"] {
+  align-self: flex-end;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 18px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.Post.form input[type="submit"]:hover {
+  background: #1d4ed8;
+}
+
+/* Each Post container */
+.Post {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 16px auto;
+  max-width: 650px;
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: background 0.2s ease;
+  text-align: left;   /* all content left aligned */
+}
+
+.Post:hover {
+  background: #f9fafb;   /* subtle hover */
+}
+
+/* Username (small, muted, like Reddit) */
+.Post .UserName {
+  font-size: 12px;
+  font-weight: 500;
+  color: #6b7280;   /* gray-500 */
+  margin-bottom: 6px;
+}
+
+/* Title (decent size, prominent) */
+.Post .Title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;   /* almost black */
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+/* Description (smaller, readable body) */
+.Post .Description p{
+  font-size: 14px;
+  color: #374151;   /* gray-700 */
+  line-height: 1.6;
+  text-align: left;
+  white-space: pre-wrap;
+}
