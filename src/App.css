@@ -381,3 +381,129 @@ body {
   font-size: 14px;
   color: #4b5563; /* muted gray */
 }
+
+.Post {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+  max-width: 600px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.UserName {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.Title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.Description {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 12px;
+  line-height: 1.5;
+  white-space: pre-line; /* ✅ keeps line breaks from text area */
+}
+
+.Actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start !important; /* stack everything left */
+  text-align: left !important;
+  margin-top: 12px;
+}
+
+
+.LikeSection {
+  display: flex;
+  justify-content: flex-start; /* align to the left */
+  margin-top: 8px;
+}
+
+.LikeButton {
+  display: flex;
+  align-items: center; /* vertically center button + number */
+  gap: 6px; /* spacing between button and number */
+}
+
+
+.LikeSection button {
+  background-color: #f1f5f9;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.2s;
+}
+
+.LikeSection button:hover {
+  background-color: #e2e8f0;
+}
+
+.Comments {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* keeps input + button left aligned */
+  gap: 8px;
+  width: 100%;
+}
+
+.CommentInput {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  max-width: 500px; /* so it doesn’t stretch full screen */
+}
+
+.CommentInput input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.CommentInput button {
+  background-color: #0079d3;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.CommentInput button:hover {
+  background-color: #005fa3;
+}
+
+.CommentList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+.LikeButton button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+.LikeButton button:hover {
+  opacity: 0.8;  /* only style, no content change */
+}
+.Comments span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
