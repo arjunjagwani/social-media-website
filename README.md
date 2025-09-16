@@ -83,7 +83,3 @@ src/
    ```
 
 ---
-
-
-⚡ Do you want me to also **set up deployment for you** (on Firebase Hosting or Vercel) and then update this README with the actual live link?
-```
