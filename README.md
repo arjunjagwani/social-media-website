@@ -60,7 +60,7 @@ src/
 ## ⚙️ Installation & Setup
 
 1. Clone the repository:
-   ```bash
+ ```bash
    git clone https://github.com/arjunjagwani/social-media-website.git
    cd social-media-website
 ````
